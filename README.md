@@ -2,6 +2,9 @@
 
 JC Castillo, Junio/Julio 2017.
 
+
+
+
 El siguiente documento busca establecer un marco de referencia/sugerencia de prácticas para trabajos de investigación colaborativa orientados a publicación, que además sean abiertos y reproducibles durante el proceso de la investigación.
 
 * El primer objetivo es lograr un flujo eficiente de trabajo, resolviendo a priori temas de orden técnico para así focalizarse principalmente en los contenidos del producto de investigación, que es lo más importante, y no perder demasiado tiempo en detalles de edición.
