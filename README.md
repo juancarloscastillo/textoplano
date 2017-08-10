@@ -60,7 +60,7 @@ Además por temas de difusión y registro de tema, escribir abstract (250 palabr
 - Ya que almacenar manualmente las referencias en bib es muy poco eficiente, se recomienda realizar un vínculo con un software de administración y almacenamiento de referencias, en este caso Zotero.
 - Exportar colección Zotero a .bib; alternativas
     - exportar manual a bibtex: crea archivo bib con referencias, seleccionadas o todas.
-    - Mejor Alternativa: Better Bib Tex (BBT), extensión de Zotero, instalar siguiendo las instrucciones: https://github.com/retorquere/zotero-better-bibtex/wiki
+    - Mejor Alternativa: Better Bib Tex (BBT), extensión de Zotero, instalar siguiendo las instrucciones: https://github.com/retorquere/zotero-better-bibtex/wiki     (NOTA: Al 9 de Agosto aún hay problemas exportando con la nueva versión de Zotero (5); la adaptación de BBT se encuentra en desarrollo, ver https://github.com/retorquere/zotero-better-bibtex/issues/555); por lo tanto, se recomienda instalar la versión 4 de Zotero Standalone
     - Al instalar, luego en preferences aparece una pestaña nueva, dejar opciones por defecto (en principio), pero si agregar export subcollections en pestaña Export
     - Lo que hace por defecto es generar un archivo .bib que es espejo de la colección de Zotero, en la misma carpeta Zotero
     - Aquí, una opción es dar el link desde Markdown/Latex al archivo Zotero, pero en general es muy pesado y contiene todas las referencias, no el subgrupo que se utiliza en el paper
