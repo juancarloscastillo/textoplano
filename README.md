@@ -1,11 +1,13 @@
-# Flujo de trabajo para proyectos de publicación colaborativa
+# Flujo de trabajo para investigación reproducible
 
-JC Castillo, Junio/Julio 2017.
+JC Castillo, updated: Marzo 2018
 
+Recomendados: Tutoriales de Karl Broman: http://kbroman.org/pages/tutorials.html
 
-El siguiente documento busca establecer un marco de referencia/sugerencia de prácticas para trabajos de investigación colaborativa orientados a publicación, que además sean abiertos y reproducibles durante el proceso de la investigación.
+El siguiente documento busca establecer un marco de referencia/sugerencia de prácticas para trabajos de investigación reproducibles orientados a publicación, que además sean abiertos y que favorezcan la colaboración durante el proceso de la investigación.
 
 * El primer objetivo es lograr un flujo eficiente de trabajo, resolviendo a priori temas de orden técnico para así focalizarse principalmente en los contenidos del producto de investigación, que es lo más importante, y no perder demasiado tiempo en detalles de edición.
+
 * El segundo objetivo se refiere a enmarcar el trabajo en una lógica de ciencia abierta (open science), que favorezca la colaboración y sinergia durante el proceso actual en lugar de la competitividad orientada a resultados en el mediano o largo plazo (como en el clásico proceso de publicación). Para más fundamentos relacionados a Open Science, recomiendo mirar: http://bit.ly/2shVxv4 . En esta línea, una plataforma que se sugiere usar es el Open Science Framework, OSF (https://osf.io, detalles más adelante).
 
 Este marco abarca una serie de temas de edición y análisis compartido y abierto: estructura y contenido de carpetas, prácticas de edición, sugerencias de software y plataforma de ciencia abierta (OSF).
@@ -14,12 +16,15 @@ Importante: antes de comenzar el proyecto, acordar el tema central del trabajo, 
 
 Además por temas de difusión y registro de tema, escribir abstract (250 palabras), y publicar tempranamente vía OSF y/o proyectos researchgate.
 
-## Estructura de carpetas compartidas
+## Sobre estructura de carpetas
 
-- El autor correspondiente genera carpeta compartida en Dropbox con la siguiente estructura:
+La estructura de las carpetas debe favorecer tanto el flujo de la investigación como la reproducibilidad. De hecho, se puede pensar en estas dos por separado, ya que inicialmente lo que prima es un buen flujo, y al final la reproducibilidad ... pero de todas maneras mientras más se puedan acoplar ambas mejor, para no hacer el trabajo dos veces. Lo que sigue abajo está más orientado al flujo de trabajo, para afinar en términos de reproducibilidad se sugiere seguir los estándares de TIER: https://www.projecttier.org/
 
-    - Nombre de carpeta general: abreviación sustantiva, minúsculas, separado por underlined sin acento. Ej: para paper sobre meritocracia, percepción y creencias: merit_percep_creen
-    - Dentro de esta carpeta, crear 2 subcarpetas, una para fines públicos y otra para trabajo interno, drafts, etc. La idea es que la pública sea luego abierta a otros investigadores durante el proceso de investigación. Recomendaciónes:
+
+1- El autor principal genera carpeta con la siguiente estructura:
+
+    - Nombre de carpeta general: abreviación sustantiva, minúsculas, separado por underlined sin. Ej: para paper sobre meritocracia, percepción y creencias: merit_percep_creen (este formato evita posibles errores posteriores de compilación debidos a encoding).
+    - Dentro de esta carpeta, crear 2 subcarpetas, una para fines públicos y otra para trabajo interno, drafts, etc. La idea es que la pública sea luego abierta a otros investigadores durante el proceso de investigación. Recomendaciones:
         - carpeta local/interna mismo nombre que la carpeta superior pero con prefijo "loc" (ej:loc_merit_percep_creen). Dentro de esta carpeta, seguir la estructura de subcarpetas (contenidos a detallar en siguiente punto):
             - data: bases de datos
             - analysis: código(s)
@@ -27,9 +32,9 @@ Además por temas de difusión y registro de tema, escribir abstract (250 palabr
             - results: graficos, tablas
             - objects: generados por el código
             - bib: bibliografía
-        - carpeta pública: prefijo pub, no necesariamente tiene que poseer subcarpetas, luego cuando la carpeta local pase a fase de draft, se sugiere crear copias sincronizadas de los dos archivos principales: código y texto (ej: pdf)
+        - carpeta pública: prefijo pub, ajustar a estándares de reproducibilidad tipo TIER (ej: pdf)
 
-## Contenidos
+## Contenidos carpeta local
 
 - datos: contienen base(s) de datos original(es) (mantener nombre y nunca sobreescribir).
 - codigo:
@@ -38,7 +43,8 @@ Además por temas de difusión y registro de tema, escribir abstract (250 palabr
     - Idealmente, llamar los datos directamente desde la web para evitar tener que estar estableciendo distintos setwd en el código; esto se puede lograr si hay un repositorio abierto donde están los datos, o dirigir al link de la carpeta Dropbox, o mejor en GitHub. Igual aquí puede haber problemas si se liberan datos que requieren un consentimiento, por lo que los datos originales se pueden mejor guardar en la carpeta local.
     - Comentar exhaustivamente cada paso del análisis (Ej: #Recodificación de variables)
     - Ver plantilla código mínimo ejemplo (pendiente)
-- Paper: aquí va el documento con los contenidos, nombrar apellido, año, nombre resumido, versión. Ej: Atria_etal_2017_Viviendo_de_los_impuestos_v1. En caso que se considere necesario se puede agregar otro archivo con un log / bitácora referida a los cambios en las distintas versiones. Idealmente mantener en esta carpeta la última version, las otras se pueden mover a la interna a una carpeta versiones_anteriores (en caso de no trabajar con control de versiones).
+
+- paper: aquí va el documento con los contenidos, nombrar apellido, año, nombre resumido, versión. Ej: Atria_etal_2017_Viviendo_de_los_impuestos_v1. En caso que se considere necesario se puede agregar otro archivo con un log / bitácora referida a los cambios en las distintas versiones. Idealmente mantener en esta carpeta la última version, las otras se pueden mover a la interna a una carpeta versiones_anteriores (en caso de no trabajar con control de versiones).
 - Referencias: aquí se puede guardar el archivo que contiene las referencias (ej: bibtex, carpeta zotero ad-hoc).
 - Results: la idea es que los resultados del análisis en forma de gráficos y tablas puedan ser grabados y luego llamados desde el código; este paso no es necesario en caso de incluir los resultados en el texto vía Knitr.
 
@@ -52,15 +58,13 @@ Además por temas de difusión y registro de tema, escribir abstract (250 palabr
     - La dificultad principal es que no mucha gente los utiliza en ciencias sociales, lo que puede dificultar la colaboración y lleva a que finalmente el formato por "defecto" sea Word, que implica mucho trabajo de formato.
     - Markdown parece mejor alternativa que Latex por su simpleza, formato minimalista y facilidad para convertir a otros formatos (latex, html, word, pdf). Por lo tanto, en principio sugiero comenzar escribiendo en **Markdown** y luego tal vez pasar a Latex en caso de favorecer la edición. La escritura en Markdown funciona muy bien en Rstudio, sobre todo en combinación con análisis. Si el foco es más la escritura que el análisis sugiero Atom y los paquetes language-markdown y markdown-preview-plus. Además, Atom tiene mejor soporte para vínculos con archivos de bibliografía (detalles más adelante).
 
-
-
 ## Referencias Bibliográficas
 
 - Lógica general: poder citar referencias directamente desde Markdown/Latex. Esto se hace guardando las referencias en formato y archivo bibtex, en un archivo .bib
 - Ya que almacenar manualmente las referencias en bib es muy poco eficiente, se recomienda realizar un vínculo con un software de administración y almacenamiento de referencias, en este caso Zotero.
 - Exportar colección Zotero a .bib; alternativas
     - exportar manual a bibtex: crea archivo bib con referencias, seleccionadas o todas.
-    - Mejor Alternativa: Better Bib Tex (BBT), extensión de Zotero, instalar siguiendo las instrucciones: https://github.com/retorquere/zotero-better-bibtex/wiki     (NOTA: Al 9 de Agosto aún hay problemas exportando con la nueva versión de Zotero (5); la adaptación de BBT se encuentra en desarrollo, ver https://github.com/retorquere/zotero-better-bibtex/issues/555); por lo tanto, se recomienda instalar la versión 4 de Zotero Standalone
+    - Mejor Alternativa: Better Bib Tex (BBT), extensión de Zotero, instalar siguiendo las instrucciones: https://github.com/retorquere/zotero-better-bibtex/wiki
     - Al instalar, luego en preferences aparece una pestaña nueva, dejar opciones por defecto (en principio), pero si agregar export subcollections en pestaña Export
     - Lo que hace por defecto es generar un archivo .bib que es espejo de la colección de Zotero, en la misma carpeta Zotero
     - Aquí, una opción es dar el link desde Markdown/Latex al archivo Zotero, pero en general es muy pesado y contiene todas las referencias, no el subgrupo que se utiliza en el paper
@@ -113,4 +117,3 @@ Además por temas de difusión y registro de tema, escribir abstract (250 palabr
 - Check Authorea - git integration: https://www.authorea.com/
 - revisar sitio y cursos de Kieran Healey, https://kieranhealy.org/
 - about open source: https://kieranhealy.org/files/papers/oss-activity.pdf
-- Tutoriales de Karl Broman: http://kbroman.org/pages/tutorials.html
