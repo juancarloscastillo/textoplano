@@ -23,8 +23,9 @@ La estructura de las carpetas debe favorecer tanto el flujo de la investigación
 
 1- El autor principal genera carpeta con la siguiente estructura:
 
-    - Nombre de carpeta general: abreviación sustantiva, minúsculas, separado por underlined sin. Ej: para paper sobre meritocracia, percepción y creencias: merit_percep_creen (este formato evita posibles errores posteriores de compilación debidos a encoding).
-    - Dentro de esta carpeta, crear 2 subcarpetas, una para fines públicos y otra para trabajo interno, drafts, etc. La idea es que la pública sea luego abierta a otros investigadores durante el proceso de investigación. Recomendaciones:
+  - Nombre de carpeta general: abreviación sustantiva, minúsculas, separado por underlined sin. Ej: para paper sobre meritocracia, percepción y creencias: merit_percep_creen (este formato evita posibles errores posteriores de compilación debidos a encoding).
+  - Dentro de esta carpeta, crear 2 subcarpetas, una para fines públicos y otra para trabajo interno, drafts, etc. La idea es que la pública sea luego abierta a otros investigadores durante el proceso de investigación.
+  - Recomendaciones:
         - carpeta local/interna mismo nombre que la carpeta superior pero con prefijo "loc" (ej:loc_merit_percep_creen). Dentro de esta carpeta, seguir la estructura de subcarpetas (contenidos a detallar en siguiente punto):
             - data: bases de datos
             - analysis: código(s)
@@ -60,31 +61,7 @@ La estructura de las carpetas debe favorecer tanto el flujo de la investigación
 
 ## Referencias Bibliográficas
 
-- Lógica general: poder citar referencias directamente desde Markdown/Latex. Esto se hace guardando las referencias en formato y archivo bibtex, en un archivo .bib
-- Ya que almacenar manualmente las referencias en bib es muy poco eficiente, se recomienda realizar un vínculo con un software de administración y almacenamiento de referencias, en este caso Zotero.
-- Exportar colección Zotero a .bib; alternativas
-    - exportar manual a bibtex: crea archivo bib con referencias, seleccionadas o todas.
-    - Mejor Alternativa: Better Bib Tex (BBT), extensión de Zotero, instalar siguiendo las instrucciones: https://github.com/retorquere/zotero-better-bibtex/wiki
-    - Al instalar, luego en preferences aparece una pestaña nueva, dejar opciones por defecto (en principio), pero si agregar export subcollections en pestaña Export
-    - Lo que hace por defecto es generar un archivo .bib que es espejo de la colección de Zotero, en la misma carpeta Zotero
-    - Aquí, una opción es dar el link desde Markdown/Latex al archivo Zotero, pero en general es muy pesado y contiene todas las referencias, no el subgrupo que se utiliza en el paper
-    - Por lo tanto, hacer lo siguiente:
-        -  crear una colección/carpeta compartida de Zotero (asumiendo escenario de trabajo colaborativo) donde se copian las referencias que se utilizan en el paper. Esto es fácil en Zotero, solo se arrastran, y no hace que toda la información se duplique, es solo un link. Como es compartida, cualquier miembro del equipo puede modificar. Precaución: el nombre de esta carpeta sin espacios y sin acentos
-        - El coordinador/primer autor exporta esta colección a la carpeta del proyecto colaborativo (eventualmente un dropbox) donde está el tex. Para ello, boton derecho sobre la carpeta, "export library", seleccionar *format Better Bibtex*, y muy importante: check box "keep updated", así cualquier cambio que se haga en la colección desde Zotero se reflejará en el .bib. Guardar en la carpeta donde se encuentra el archivo tex
-        - Luego, revisar en la pestaña de BBT de preferencias, en automatic export, que la carpeta efectivamente está en el listado. Además, marcar la opción "on change", así apenas se actualice la librería de Zotero se va a actualizar el bib
-
-- Luego para poder referenciar en tex:
-    - En el preambulo (hay diferentes opciones de formato, pero para estilo clásico APA):
-        - \usepackage{natbib} % for Bibtex
-        - \bibliographystyle{apalike}   % ver por ej otros estilos en https://es.sharelatex.com/learn/Natbib_bibliography_styles
-        - Y luego, donde se quiera la bibliografía, (usualmente, antes de \end(document)
-        - \bibliography{micolección} % aquí va el nombre de la colección, cuidado con no darle nombre con espacios, y tampoco terminarla con .bib
-        - Con esto, ya se puede comenzar a citar con las distintas opciones (ver https://gking.harvard.edu/files/natnotes2.pdf)
-        - Para mayores detalles referentes a natbib y en general bibliographic management en Latex ver https://es.sharelatex.com/learn/Bibliography_management_with_natbib
-    - Algunos issues con Latex: si se añade alguna cita a la carpeta Zotero, si bien esto es actualizado automáticamente en el bib, no necesariamente es reconocido al momento de citar. Por eso, se recomienda tener abierto el archivo .bib en el editor de tex en otra pestaña, y si la referencia no aparece al intentar citar compilar el bib, esto hace que queden disponibles para citar (lo que se ve en el .bbl, donde se encuentran las referencias citadas en el texto)
-    - Por lo visto, las referencias en el .bbl se van sumando, y no se borran. Por lo tanto, puede pasar que se cite algo en alguna ocasión, pero si esa cita se decide borrar va a seguir de todas maneras apareciendo en la bibliografía final. Para ajustar esto, cuando se genere una versión más definitiva del documento, borrar el bbl y compilar el tex nuevamente.
-    - Atención: si se quiere cambiar el estilo (\bibliographystyle{}), a veces no lo reconoce y se queda con el anterior o arroja error; la opción que me resulta es borrar los archivos aux y bbl, y luego compilar nuevamente.
-    - También hay problemas cuando alguna entrada del archivo .bib no tiene el año, en este archivo aparecen como ???? y esto crea dificultades de compilación; arreglar en Zotero, sincronizar nuevamente y compilar.
+ver: https://juancarloscastillo.github.io/citando-plano/
 
 ## Roles / tareas
 
